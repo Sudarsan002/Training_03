@@ -8,7 +8,7 @@ const CreateSchedulePage = () => {
     <>
        <Header/>
        <CreateSchedule/>
-       {/* <NewSchedule/> */}
+      
        <Footer/>
     </>
   )

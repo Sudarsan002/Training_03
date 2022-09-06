@@ -9,6 +9,7 @@ import Button from '../Components/Button'
 
 import { FormData } from '../Common/data/FormData'
 import SubjectLabComponent from '../Components/SubjectLabComponent'
+import { Dropdown0 } from '../Components/svg/Dropdown'
 const DropIcon = () => {
     return (
         <svg
@@ -50,7 +51,8 @@ const CreateSchedule = () => {
         setExamType(FormData?.[selectedDep]?.[event.target.value - 1])
     }
 
-   
+//    let AMPMOption=['AM','PM']
+//    const[selectdAmPmDropDown,setSelectedAmPmDropDown]=useState(AMPMOption[0])
 
     
     const setBranchs = (option) => {
@@ -145,6 +147,7 @@ const CreateSchedule = () => {
                         <StyledInputText2 label="FN" />
                         <StyledInput2 type="number" />
                         <StyledInput2 type="number" />
+                        <Dropdown0/>
                        
                         <StyledInputText2_1 label="to" />
                         <StyledInput2 type="number" />
@@ -164,6 +167,7 @@ const CreateSchedule = () => {
                         <StyledInputText2 label="AN" />
                         <StyledInput2 type="number" />
                         <StyledInput2 type="number" />
+                        <Dropdown0/>
                         
                         <StyledInputText2_1 label="to" />
                         <StyledInput2 type="number" />
@@ -316,3 +320,35 @@ const SaveButton = styled(Button)`
     margin-top: 56px;
     background: #5375e2;
 `
+
+// export const Dropdown0 = (props) => {
+//     return (
+//       <div>
+//         <select
+//           style={{
+//             boxSizing: "border-box",
+//             display: "flex",
+//             flexDirection: "row",
+//             padding: " 8px 16px",
+//             gap: "30px",
+//             width: "181px",
+//             height: "56px",
+//             background: "#FFFFFF",
+//             border: "1px solid #E8E8EA",
+//             borderRadius: "10px",
+//             order: "1",
+//             flexGrow: "0",
+//             height: "56px",
+//             marginRight: "20px",
+//             opacity: "0.5",
+            
+//           }}
+         
+//         >
+//          <option>Am</option>
+//          <option>Pm</option>
+//         </select>
+//       </div>
+//     );
+//   };
+  
