@@ -64,7 +64,6 @@ const AllocationPage = (props) => {
   ]);
 
   const onDelete = (item, index) => {
-    // create duplicate Value
     const tempCardDetails = [...cardDetails];
     tempCardDetails.splice(index, 1);
     setCardDetails(tempCardDetails);
