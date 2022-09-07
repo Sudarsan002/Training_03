@@ -1,11 +1,18 @@
 import React from "react";
 import TextComponent from "./TextComponent";
+import { useRouter } from "next/router";
 export const ButtonComponent1 = (props) => {
     const { type, marginTop = 90, marginLeft = 90 } = props;
+    const Router = useRouter()
+    const Next = () => {
+        Router.push('/CreateSchedulePage')
+    }
     return (
       <div>
         <div>
+
           <button
+          onClick={Next}
             type={type}
             style={{
               marginTop,

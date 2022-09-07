@@ -15,6 +15,21 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
+    ],
+    "/AllocationPage": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/AllocationPage.js"
+    ],
+    "/CreateSchedulePage": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/CreateSchedulePage.js"
+    ],
     "/Editpage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
