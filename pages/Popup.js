@@ -12,11 +12,13 @@ const  Pop=() => {
     
     return(
             <div >
+            
         <Popup 
             trigger={
                 <button
 
                     style={{
+                        
                         padding: '10px',
                         width: '174px',
                         borderRadius: '5px',
@@ -35,13 +37,14 @@ const  Pop=() => {
         >
             <div 
                 style={{
-                    color: 'black',
+                    color: 'White',
                     width: '900px',
                     height: '293px',
-                    backgroundColor: '#F6F6F6',
+                    backgroundColor: '#FFF',
                     position: ' center',
                     marginBottom: '30%',
                     marginRight: '100px',
+                    boxShadow:"7px 7px 5px 0px rgba(50, 50, 50, 0.75)",
                 }}
             >
                 <span
@@ -52,6 +55,10 @@ const  Pop=() => {
                 >
                     {' '}
                     <a href="AllocationPage">GoHome</a>
+                    <p style={{color:"black",textAlign:"center",fontFamily: 'Nunito Sans',
+            fontStyle: "normal",
+            fontWeight: "700",
+            fontSize: "30px",marginTop:"70px"}}>BE EEE SEM3 schedule was successfully created</p>
                 </span>
            
                 <div>
@@ -59,7 +66,8 @@ const  Pop=() => {
                     <Button 
                     onClick={New}
                         style={{
-                            marginTop: '200px',
+                            
+                            marginTop: '70px',
                             borderRadius: '5px',
                             border: '1px solid #5375E2',
                             marginLeft: '249px',
@@ -72,7 +80,7 @@ const  Pop=() => {
                     </Button>
                     <Button
                         style={{
-                            marginTop: '200px',
+                            marginTop: '70px',
                             borderRadius: '5px',
                             border: '1px solid #5375E2',
                             marginLeft: '',
