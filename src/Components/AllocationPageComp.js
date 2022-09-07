@@ -1,8 +1,9 @@
 import React from "react";
 import DeleteIcon from "./svg/DeleteIcon"
-import TickIcon from "./svg/TickIcon";
+import TickIcon from "./svg/TicketIcon";
 import EditIcon from "./svg/EditIcon"
-import { ButtonComponent1 } from "./ButtonComponent";
+import { ButtonComponent1 } from "./ButtonComponent"
+import { useRouter } from "next/router";
 
 export const AllocationPageComp = (props) => {
   const {
@@ -20,6 +21,10 @@ export const AllocationPageComp = (props) => {
     marginTop = 0,
     isCreateCard = false,
   } = props;
+  const Router = useRouter()
+  const Edit = () => {
+      Router.push('/Editpage')
+ };
   return (
     <div style={{ marginTop }}>
       {isCreateCard ? (
@@ -48,7 +53,7 @@ export const AllocationPageComp = (props) => {
             <div style={styles.rowSpaceBetween}>
               <div style={styles.headingText}>{heading}</div>
               <div style={styles.row}>
-                <EditIcon onClick={editPress} />
+                <EditIcon onClick={Edit} />
                 <DeleteIcon onClick={deletePress} marginLeft={22} />
               </div>
             </div>

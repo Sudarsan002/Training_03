@@ -4,6 +4,7 @@ import { CheckBox } from "../Components/CheckBox";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import FilterIcon from "../Components/svg/Filter";
+import { useRouter } from "next/router";
 
 const AllocationPage = (props) => {
  
@@ -69,6 +70,10 @@ const AllocationPage = (props) => {
     tempCardDetails.splice(index, 1);
     setCardDetails(tempCardDetails);
   };
+
+  
+  
+  
   return (
     <>
       <Header />
@@ -116,7 +121,7 @@ const AllocationPage = (props) => {
               isCompleted={item?.completed}
               marginTop={51}
               deletePress={() => onDelete(item, index)}
-              // editPress={()=> }
+               editPress={()=> onclick={Edit}}
             />
           );
         })}

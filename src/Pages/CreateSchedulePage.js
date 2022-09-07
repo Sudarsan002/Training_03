@@ -8,7 +8,6 @@ const CreateSchedulePage = () => {
     <>
        <Header/>
        <CreateSchedule/>
-      
        <Footer/>
     </>
   )

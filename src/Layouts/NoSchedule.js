@@ -2,10 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import CreateButton from "../Components/CreateButton";
 import TextComponent from "../Components/TextComponent";
-
+import Router, { useRouter } from "next/router";
 const NoSchedule = () => {
+  const Router = useRouter();
+  const Next=()=>{
+    Router.push("/CreateSchedulePage")
+  }
   return (
-    <div style={{ padding: "5.98639455782313vw 34.21768707482993vw 6.80952380952381vw" ,position:'relative'}}>
+    <div onClick={Next} style={{ padding: "5.98639455782313vw 34.21768707482993vw 6.80952380952381vw" ,position:'relative'}}>
       <NoScheduleImage
         src="https://i.ibb.co/m6n1ZR4/Events-rafiki-1.png"
         alt="Events-rafiki-1"

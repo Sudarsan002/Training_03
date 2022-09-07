@@ -6,10 +6,13 @@ import { useState } from 'react'
 import InputComponent from '../Components/InputComponent'
 import TextComponent from '../Components/TextComponent'
 import Button from '../Components/Button'
-
 import { FormData } from '../Common/data/FormData'
 import SubjectLabComponent from '../Components/SubjectLabComponent'
 import { Dropdown0 } from '../Components/svg/Dropdown'
+import { useRouter } from 'next/router'
+import Popup from '../Pages/Popup'
+import Pop from '../Pages/Popup'
+
 const DropIcon = () => {
     return (
         <svg
@@ -28,33 +31,26 @@ const DropIcon = () => {
 }
 
 const CreateSchedule = () => {
-  
     const [branch, setBranch] = useState(FormData?.branchanddep || [])
     const [selectedBranch, setSelectedBranch] = useState(branch[0] || {})
 
-   
     const [deps, setdeps] = useState(selectedBranch?.deps || [])
-    const [selectedDep, setSelectedDep] = useState('--Select--')
+    const [selectedDep, setSelectedDep] = useState('Select')
 
-    
     const [ExamType, setExamType] = useState([])
-    const [selectedExamType, setSelectedExamType] = useState('--Select--')
-
+    const [selectedExamType, setSelectedExamType] = useState('Select')
 
     const [subjectDetails, setSubjectDetails] = useState([])
 
-    
     const [sem, setsem] = useState('')
     const handleChangeInSem = (event) => {
-        
         setsem(event.target.value)
         setExamType(FormData?.[selectedDep]?.[event.target.value - 1])
     }
 
-//    let AMPMOption=['AM','PM']
-//    const[selectdAmPmDropDown,setSelectedAmPmDropDown]=useState(AMPMOption[0])
+    //    let AMPMOption=['AM','PM']
+    //    const[selectdAmPmDropDown,setSelectedAmPmDropDown]=useState(AMPMOption[0])
 
-    
     const setBranchs = (option) => {
         setSelectedBranch(option)
         setdeps(option?.deps)
@@ -71,15 +67,19 @@ const CreateSchedule = () => {
     const setexamTypes = (option) => {
         console.log(sem)
         setSelectedExamType(option.ExamType)
-        setSubjectDetails(
-            FormData?.[selectedDep]?.[sem-1]?.[0]?.subjects
-        )
+        setSubjectDetails(FormData?.[selectedDep]?.[sem - 1]?.[0]?.subjects)
     }
     const setDateHanlde = (option) => {}
+    const Router = useRouter()
+    const Back = () => {
+        Router.push('/')
+    }
+
     return (
         <>
             <StyledMainContainer>
                 <div
+                    onClick={Back}
                     style={{
                         display: 'flex',
                         flexDirection: 'row',
@@ -147,12 +147,12 @@ const CreateSchedule = () => {
                         <StyledInputText2 label="FN" />
                         <StyledInput2 type="number" />
                         <StyledInput2 type="number" />
-                        <Dropdown0/>
-                       
+                        <Dropdown0 />
+
                         <StyledInputText2_1 label="to" />
                         <StyledInput2 type="number" />
                         <StyledInput2 type="number" />
-                        
+
                         <StyledInputText2_2 label="3 Hours" />
                         <StyledCheckBox type="checkbox" value="FN" />
                         <StyledInputText2_2 label="Set all for FN" />
@@ -167,15 +167,15 @@ const CreateSchedule = () => {
                         <StyledInputText2 label="AN" />
                         <StyledInput2 type="number" />
                         <StyledInput2 type="number" />
-                        <Dropdown0/>
-                        
+                        <Dropdown0 />
+
                         <StyledInputText2_1 label="to" />
                         <StyledInput2 type="number" />
                         <StyledInput2 type="number" />
-                       
+
                         <StyledInputText2_2 label="3 Hours" />
                         <StyledCheckBox type="checkbox" value="AN" />
-                        <StyledInputText2_2  label="Set all for AN"/>
+                        <StyledInputText2_2 label="Set all for AN" />
                     </div>
                     <div
                         style={{
@@ -197,7 +197,7 @@ const CreateSchedule = () => {
                     <SubjectLabComponent
                         details={subjectDetails}
                         setDetails={setSubjectDetails}
-                        label = "Subject"
+                        label="Subject"
                     />
                 </StyledWrapper>
 
@@ -208,7 +208,8 @@ const CreateSchedule = () => {
                         justifyContent: 'flex-end',
                     }}
                 >
-                    <SaveButton label="Save" />
+                    {/* <SaveButton label="Save" /> */}
+<Pop/>
                     <div />
                 </div>
             </StyledMainContainer>
@@ -217,6 +218,18 @@ const CreateSchedule = () => {
 }
 
 export default CreateSchedule
+
+const SaveButton = styled(Button)`
+    border: 1px solid #5375e2;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10.5px 49px;
+    color: #ffffff;
+    margin-top: 56px;
+    background: #5375e2;
+`
 
 const StyledMainContainer = styled.div`
     padding: 35px 122px 89px;
@@ -278,7 +291,6 @@ const StyledInputText2_2 = styled(TextComponent)`
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
-
 `
 const StyledCheckBox = styled(InputComponent)`
     margin-top: 10px;
@@ -309,46 +321,3 @@ const FNANButton = styled(Button)`
 const StyledInputText3 = styled(StyledInputText1)`
     margin-bottom: 30px;
 `
-const SaveButton = styled(Button)`
-    border: 1px solid #5375e2;
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    padding: 10.5px 49px;
-    color: #ffffff;
-    margin-top: 56px;
-    background: #5375e2;
-`
-
-// export const Dropdown0 = (props) => {
-//     return (
-//       <div>
-//         <select
-//           style={{
-//             boxSizing: "border-box",
-//             display: "flex",
-//             flexDirection: "row",
-//             padding: " 8px 16px",
-//             gap: "30px",
-//             width: "181px",
-//             height: "56px",
-//             background: "#FFFFFF",
-//             border: "1px solid #E8E8EA",
-//             borderRadius: "10px",
-//             order: "1",
-//             flexGrow: "0",
-//             height: "56px",
-//             marginRight: "20px",
-//             opacity: "0.5",
-            
-//           }}
-         
-//         >
-//          <option>Am</option>
-//          <option>Pm</option>
-//         </select>
-//       </div>
-//     );
-//   };
-  

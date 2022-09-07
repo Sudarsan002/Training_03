@@ -12,7 +12,7 @@ const FooterWrapper = styled.footer`
   letter-spacing: 0.03em;
   color: #000000;
   //color:red;
-  margin-top:50px;
+  margin-top:10%;
 `;
 
 const FooterText = styled.p`
