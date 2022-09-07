@@ -71,7 +71,7 @@ const EditSchedule = () => {
     const setDateHanlde = (option) => {}
     const Router = useRouter()
     const Back = () => {
-        Router.push('/')
+        Router.push('/AllocationPage')
     }
 
     return (
