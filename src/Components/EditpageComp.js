@@ -10,7 +10,7 @@ import { FormData } from '../Common/data/FormData'
 import SubjectLabComponent from '../Components/SubjectLabComponent'
 import { Dropdown0 } from '../Components/svg/Dropdown'
 import { useRouter } from 'next/router'
-import Pop from '../Pages/Popup'
+import Pop from '../../pages/Popup'
 
 const DropIcon = () => {
     return (

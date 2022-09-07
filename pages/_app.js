@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import GlobalStyle from "../Components/svg/GlobalStyle";
+import GlobalStyle from "../src/Components/svg/GlobalStyle";
 function MyApp({ Component, pageProps }) {
   return (
     <>

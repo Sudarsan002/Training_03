@@ -1,7 +1,7 @@
 import React from 'react'
-import CreateSchedule from '../Layouts/CreateSchedule'
-import Footer from '../Layouts/Footer'
-import Header from '../Layouts/Header'
+import CreateSchedule from '../src/Layouts/CreateSchedule'
+import Footer from '../src/Layouts/Footer'
+import Header from '../src/Layouts/Header'
 
 const CreateSchedulePage = () => {
   return (
