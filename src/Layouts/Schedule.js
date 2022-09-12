@@ -2,7 +2,6 @@ import React from 'react'
 import ArrowIcon from '../Components/svg/ArrowIcon'
 import { Scheduleform } from '../Common/data/ScheduleForm'
 import { LabForm } from '../Common/data/LabForm'
-// import { useRouter } from 'next/router'
 
 export const Title = () => {
     return (
@@ -11,7 +10,6 @@ export const Title = () => {
                 padding: '35px 122px 20px',
                 display: 'flex',
                 flexDirection: 'row',
-
                 fontSize: '24px',
             }}
         >
@@ -38,7 +36,7 @@ export const SchduleButton = () => {
                     backgroundColor: '#5375E2',
                     width: '144px',
                     height: '32px',
-                    //*
+                    
                     color: 'white',
                     border: '1px solid #5375E2',
                 }}
@@ -60,7 +58,6 @@ export const Schedule = () => {
                 fontWeight: '700',
                 fontSize: '20px',
                 width: '1196px',
-                // height: '600px',
                 marginLeft: '120px',
             }}
         >
@@ -69,7 +66,6 @@ export const Schedule = () => {
                     marginBottom: '10px',
                 }}
             >
-                {' '}
                 Semester Schedule
             </div>
             <SemSch />
@@ -86,7 +82,7 @@ export const Schedule = () => {
     )
 }
 
-export const AllocationBtn = () => {
+export const AllocationBtn = (props) => {
     return (
         <div>
             <button
@@ -107,9 +103,6 @@ export const AllocationBtn = () => {
 }
 
 export const SemSch = () => {
-
-    
-  
     return (
         <div
             style={{
@@ -123,22 +116,21 @@ export const SemSch = () => {
                 style={{
                     width: '100%',
                     textAlign: 'center',
-                   
                 }}
             >
-                <tr
-                    style={{
-                        color: '#5375E2',
-                    }}
-                >    
-                    <td>SNo</td>
-                    <td>Date</td>
-                    <td>Session</td>
-                    <td>CourseCode</td>
-                    <td>SubjectName</td>
-                    
-                </tr>
-
+                <thead>
+                    <tr
+                        style={{
+                            color: '#5375E2',
+                        }}
+                    >
+                        <td>SNo</td>
+                        <td>Date</td>
+                        <td>Session</td>
+                        <td>CourseCode</td>
+                        <td>SubjectName</td>
+                    </tr>
+                </thead>
                 {Scheduleform.map((SemesterSch) => (
                     <tr>
                         <td>{SemesterSch.SNo}</td>
@@ -154,7 +146,6 @@ export const SemSch = () => {
 }
 
 export const LabSch = () => {
-    // console.log(props.Scheduleform)
     return (
         <div
             style={{
@@ -182,10 +173,8 @@ export const LabSch = () => {
 
                 {LabForm.map((LabForm) => (
                     <tr>
-                       
-                            <td>{LabForm.SNo}</td>
-                       
-                        
+                        <td>{LabForm.SNo}</td>
+
                         <td>{LabForm.Date}</td>
                         <td>{LabForm.Session}</td>
                         <td>{LabForm.CourseCode}</td>
