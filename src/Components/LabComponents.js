@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import Button from './Button'
 import InputComponent from './InputComponent'
 import TextComponent from './TextComponent'
@@ -12,14 +11,7 @@ export const SubjectLabComponent = (props) => {
         clonedArray[index].date = event?.target?.value
         setDetails(clonedArray)
     }
-    const handleChangeFN = (index) => {
-        let clonedArray = [...details]
-        if (clonedArray[index].isNoon === '') clonedArray[index].isNoon = false
-        else if (clonedArray[index].isNoon === false)
-            clonedArray[index].isNoon = true
-        else clonedArray[index].isNoon = false
-        setDetails(clonedArray)
-    }
+
 
     return (
         <>
@@ -69,6 +61,8 @@ export const SubjectLabComponent = (props) => {
                                     color: '#ABA9AE',
                                 }}
                             >
+
+                            {/* Subject code */}
                                 <div>{item?.code}</div>
                             </div>
                         </div>
@@ -104,9 +98,9 @@ export const SubjectLabComponent = (props) => {
                             <InputComponent
                                 label="Date"
                                 type="date"
-                                onChange={(event) => {
-                                    handleChangeDate(event, index)
-                                }}
+                                // onChange={(event) => {
+                                //     handleChangeDate(event, index)
+                                // }}
                             />
                         </div>
 
@@ -143,12 +137,10 @@ export const SubjectLabComponent = (props) => {
                                 <div
                                     style={{
                                         width: '6.1%',
-
                                         border: '1px solid #5375e2',
                                         borderRadius: '5px',
                                         fontWeight: '400',
                                         fontSize: '16px',
-
                                         padding: '21px 22px',
                                         color: '#5375e2',
                                         marginTop: '30px',
