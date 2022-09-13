@@ -1,4 +1,6 @@
 import React from 'react'
+import { AllocationForm } from '../Common/data/AllocatonForm'
+import Table from 'react-bootstrap/Table'
 
 import { SchduleButton, Title } from './Schedule'
 
@@ -35,8 +37,7 @@ export const AllocationSch = () => {
                             margin: '39px 34px 27px 528px',
                         }}
                     >
-                        {' '}
-                        Date: 24/08/2022{' '}
+                        Date: 24/08/2022
                     </span>
                     <span>Sesion:FN</span>
                 </section>
@@ -124,24 +125,85 @@ export const AllocationSch = () => {
                         border: '1px solid #E8E8EA',
                         width: '843px',
                         height: '40px',
+                        borderRadius: '5px',
                         // textAlign:"center"
                     }}
                 >
-                    <div style={{
-                        display:"flex",
-                        flexDirection:"row"
-                    }}>
-                        <span style={{
-                            padding:"15px 60px 35px"
-                        }}>Invigilator Name: John </span>
-                        <span style={{
-                            padding:"15px 22px "
-                        }}>Invigilator Department: ECE   </span>
-                        <span style={{
-                            padding:"15px 90px 77px"
-                        }}>Students Count: 50 </span>
-                        
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                        }}
+                    >
+                        <span
+                            style={{
+                                padding: '15px 60px 35px',
+                            }}
+                        >
+                            Invigilator Name: John{' '}
+                        </span>
+                        <span
+                            style={{
+                                padding: '15px 22px ',
+                            }}
+                        >
+                            Invigilator Department: ECE{' '}
+                        </span>
+                        <span
+                            style={{
+                                padding: '15px 90px 77px',
+                            }}
+                        >
+                            Students Count: 50{' '}
+                        </span>
                     </div>
+                    <table
+                        style={{
+                            width: '100%',
+                            textAlign: 'center',
+                            border: '1px solid black',
+                        }}
+                    >
+                        <thead>
+                    <tr
+                        style={{
+                            color: '#5375E2',
+                        }}
+                    >
+                        <td>SNo</td>
+                        <td>Reg No.</td>
+                        <td>Name</td>
+                        <td>Department</td>
+                        <td>Seat No</td>
+                    </tr>
+                </thead>
+
+                       
+
+                        {AllocationForm.map((AllocationDetails) => {
+                            
+                                console.log(AllocationDetails)
+                            
+                            ;
+                            <tr>
+                                {AllocationDetails.SNo}
+                                <td>{AllocationDetails.RegNo}</td>
+                                <td>{AllocationDetails.Name}</td>
+                                <td>{AllocationDetails.Department}</td>
+                                <td>{AllocationDetails.SeatNo}</td>
+                            </tr>
+                        })}
+
+                        {/* {Scheduleform.map((SemesterSch) => (
+                    <tr>
+                        <td>{SemesterSch.SNo}</td>
+                        <td>{SemesterSch.Date}</td>
+                        <td>{SemesterSch.Session}</td>
+                        <td>{SemesterSch.CourseCode}</td>
+                        <td>{SemesterSch.SubjectName}</td>
+                    </tr>
+                ))} */}
+                    </table>
                 </div>
             </div>
         </div>

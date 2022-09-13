@@ -36,7 +36,6 @@ export const SchduleButton = () => {
                     backgroundColor: '#5375E2',
                     width: '144px',
                     height: '32px',
-                    
                     color: 'white',
                     border: '1px solid #5375E2',
                 }}

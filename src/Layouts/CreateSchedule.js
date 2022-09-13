@@ -7,7 +7,7 @@ import InputComponent from '../Components/InputComponent'
 import TextComponent from '../Components/TextComponent'
 import Button from '../Components/Button'
 import { FormData } from '../Common/data/FormData'
-import SubjectLabComponent from '../Components/SubjectLabComponent'
+import {SubjectLabComponent} from"../Components/LabComponents"
 import { Dropdown0 } from '../Components/svg/Dropdown'
 import Pop from '../Components/Popup'
 import { useRouter } from 'next/router'
