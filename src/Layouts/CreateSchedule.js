@@ -7,11 +7,12 @@ import InputComponent from '../Components/InputComponent'
 import TextComponent from '../Components/TextComponent'
 import Button from '../Components/Button'
 import { FormData } from '../Common/data/FormData'
-import {SubjectLabComponent} from"../Components/LabComponents"
+import { SubjectLabComponent } from '../Components/LabComponents'
 import { Dropdown0 } from '../Components/svg/Dropdown'
 import Pop from '../Components/Popup'
 import { useRouter } from 'next/router'
 import DataForm from '../Common/data/DataForm'
+import ArrowIcon from '../Components/svg/ArrowIcon'
 
 const CreateSchedule = () => {
     const [branch, setBranch] = useState(FormData?.branchanddep || [])
@@ -81,36 +82,38 @@ const CreateSchedule = () => {
     const [time, setTime] = useState({ hr: '', min: '' })
     const [noon, setNoon] = useState(false)
     const [noonFN, setNoonFN] = useState(false)
-    const changeTimeHandler = (e) => {
-        setTime({ hr: e.target.value, min: e.target.value })
-    }
+    // const changeTimeHandler = (e) => {
+    //     setTime({ hr: e.target.value, min: e.target.value })
+    // }
 
-    const changeCheckHandler = (e) => {
-        setNoon(e.target.checked)
-    }
+    // const changeCheckHandler = (e) => {
+    //     setNoon(e.target.checked)
+    // }
 
-    const changeCheckFNHandler = (e) => {
-        setNoonFN(e.target.checked)
-    }
+    // const changeCheckFNHandler = (e) => {
+    //     setNoonFN(e.target.checked)
+    // }
 
     // const[done , setDone]=useState(false)
 
     DataForm.branch = selectedBranch.branch
-    DataForm.subject=subjectDetails.length
+    DataForm.subject = subjectDetails.length
     DataForm.department = selectedDep
     DataForm.lab = labDetails.length
     DataForm.ExamType = selectedExamType
     DataForm.semester = sem
-    DataForm.complete=true
-    DataForm.heading = selectedBranch.branch+" "+selectedDep+" SEM "+ sem
-    
-    console.log(DataForm)
+    DataForm.complete = true
+    DataForm.heading = selectedBranch.branch + ' ' + selectedDep + ' SEM ' + sem
 
-    
+    console.log(DataForm)
 
     return (
         <>
-            <StyledMainContainer>
+            <div
+                style={{
+                    padding: '35px 122px 89px',
+                }}
+            >
                 <div
                     style={{
                         display: 'flex',
@@ -118,14 +121,33 @@ const CreateSchedule = () => {
                         marginBottom: '20px',
                     }}
                 >
-                    <StyledArrow
-                        src="https://i.ibb.co/RBRPtj0/Vector-Arrow.png"
-                        alt="Arrow"
-                        onClick={Back}
-                    />
-                    <StyledTitle>Create new schedule</StyledTitle>
+                    <div
+                        style={{
+                            height: '24px',
+                            width: '24px',
+                            marginTop: '4px',
+                        }}
+                    >
+                        <ArrowIcon />
+                    </div>
+                    <div
+                        style={{
+                            fontWeight: '600',
+                            fontSize: '24px',
+                            color: '#000000',
+                            marginLeft: '19px',
+                        }}
+                    >
+                        {' '}
+                        Create new schedule
+                    </div>
                 </div>
-                <StyledWrapper>
+                <div
+                    style={{
+                        padding: '37px 55px 50px 55px',
+                        background: '#fbfbfb',
+                    }}
+                >
                     <div
                         style={{
                             display: 'flex',
@@ -168,7 +190,17 @@ const CreateSchedule = () => {
                         />
                     </div>
                     <div>
-                        <StyledInputText1 label={'Time Range'} />
+                        <div
+                            style={{
+                                fontWeight: '700',
+                                fontSize: '16px',
+                                color: '#000000',
+                                marginBottom: '12px',
+                                marginRight: '30%',
+                            }}
+                        >
+                            Time Range
+                        </div>
                     </div>
                     {timeRangeDetails?.map((item, index) => {
                         return (
@@ -189,36 +221,94 @@ const CreateSchedule = () => {
                                     {item?.toIsAm === 'AN' ? 'FN' : 'AN'}
                                 </div>
                                 {console.log('time', time)}
-                                <StyledInput2
+                                <div
+                                    style={{
+                                        background: '#ffffff',
+                                        border: '1px solid #e8e8e8',
+                                        borderRadius: '5px',
+                                        padding: '17px 0px 17px 16px',
+                                        marginRight: '30px',
+                                        fontWeight: '600',
+                                        fontSize: '16px',
+                                        color: '#000000',
+                                        width: '5%',
+                                    }}
                                     type="number"
-                                    value={item?.fromHours}
-                                    onChange={changeTimeHandler}
-                                    time
-                                />
+                                    // onChange={changeTimeHandler}
+                                    // time
+                                >
+                                    {item?.fromHours}
+                                </div>
 
                                 {console.log('item', item)}
-                                <StyledInput2
-                                    type="number"
-                                    value={item?.fromMinutes}
-                                />
+                                <div
+                                    style={{
+                                        background: '#ffffff',
+                                        border: '1px solid #e8e8e8',
+                                        borderRadius: '5px',
+                                        padding: '17px 0px 17px 16px',
+                                        marginRight: '30px',
+                                        fontWeight: '600',
+                                        fontSize: '16px',
+                                        color: '#000000',
+                                        width: '5%',
+                                    }}
+                                >
+                                    {item?.fromMinutes}
+                                </div>
                                 <Dropdown0 />
-                                <StyledInputText2_1
-                                    label="to"
-                                    // label={item?.fromHours}
-                                />
-                                <StyledInput2
-                                    type="number"
-                                    value={item?.toHours}
-                                />
-                                <StyledInput2
-                                    type="number"
-                                    value={item?.toMinutes}
-                                />
+                                <div
+                                    style={{
+                                        marginTop: ' 21px',
+                                        marginRight: '37px',
+                                        fontWeight: '600',
+                                        fontSize: '16px',
+                                    }}
+                                >
+                                    to
+                                </div>
+                                <div
+                                    style={{
+                                        background: '#ffffff',
+                                        border: '1px solid #e8e8e8',
+                                        borderRadius: '5px',
+                                        padding: '17px 0px 17px 16px',
+                                        marginRight: '30px',
+                                        fontWeight: '600',
+                                        fontSize: '16px',
+                                        color: '#000000',
+                                        width: '5%',
+                                    }}
+                                >
+                                    {item?.toHours}
+                                </div>
+                                <div
+                                    style={{
+                                        background: '#ffffff',
+                                        border: '1px solid #e8e8e8',
+                                        borderRadius: '5px',
+                                        padding: '17px 0px 17px 16px',
+                                        marginRight: '30px',
+                                        fontWeight: '600',
+                                        fontSize: '16px',
+                                        color: '#000000',
+                                        width: '5%',
+                                    }}
+                                >
+                                    {item?.toMinutes}
+                                </div>
                                 <Dropdown0 />
-                                <StyledInputText2_2
-                                    
-                                    value={item?.toHours}
-                                />
+                                <div
+                                    style={{
+                                        marginTop: '21px',
+                                        marginRight: '56px',
+                                        color: ' #767676',
+                                        fontWeight: '700',
+                                        fontSize: '16px',
+                                    }}
+                                >
+                                    {item?.toHours}
+                                </div>
                                 <div
                                     style={{
                                         marginTop: '23px',
@@ -228,19 +318,31 @@ const CreateSchedule = () => {
                                 >
                                     3 hours
                                 </div>
-                                <StyledCheckBox
+                                {/* <div
+                                    style={{
+                                        marginTop: '10px',
+                                        marginRight: '13px',
+                                        color: '#767676',
+                                    }}
                                     type="checkbox"
-                                    
-                                    value={item?.toMinutes}
-                                    onChange={changeCheckHandler}
-                                />
-                                <StyledInputText2_2
-                                    label={`Set all for ${
-                                        item?.toIsAm === 'AN' ? 'AN' : 'FN'
+                                    // value={item?.toMinutes}
+                                    // onChange={changeCheckHandler}
+                                ></div> */}
+                                <div
+                                    style={{
+                                        marginTop: '21px',
+                                        marginRight: '56px',
+                                        color: ' #767676',
+                                        fontWeight: '700',
+                                        fontSize: '16px',
+                                    }}
+                                >
+                                    {`Set all for ${
+                                        item?.toIsAm === 'FN' ? 'AN' : 'FN'
                                     }`}
-                                    value={item?.toIsAm ? 'AN' : 'FN'}
-                                    onChange={changeCheckFNHandler}
-                                />
+                                    {/* value={item?.toIsAm ? 'AN' : 'FN'} */}
+                                    {/* onChange={changeCheckFNHandler} */}
+                                </div>
                             </div>
                         )
                     })}
@@ -273,14 +375,20 @@ const CreateSchedule = () => {
                         // noonFN={noonFN}
                     />
                     <div>
-                        <StyledInputText3 label="Labs" />
+                        <div
+                            style={{
+                                marginBottom: '30px',
+                            }}
+                        >
+                            Labs{' '}
+                        </div>
                     </div>
                     <SubjectLabComponent
                         details={labDetails}
                         setDetails={setLabDetails}
                         label="Lab"
                     />
-                </StyledWrapper>
+                </div>
 
                 <div
                     style={{
@@ -289,7 +397,10 @@ const CreateSchedule = () => {
                         justifyContent: 'flex-end',
                     }}
                 >
-                    <Pop dataForm = {DataForm}  onClick={(e) => onClick(e.target.value)} />
+                    <Pop
+                        dataForm={DataForm}
+                        onClick={(e) => onClick(e.target.value)}
+                    />
                     {/* <div
                         onClick={(e) => onClick(e)}
                         style={{
@@ -325,113 +436,95 @@ const CreateSchedule = () => {
                         s--s-s-s-ss-s-s-s-s-
                     </div> */}
                 </div>
-            </StyledMainContainer>
+            </div>
         </>
     )
 }
 
 export default CreateSchedule
 
-const SaveButton = styled(Button)`
-    border: 1px solid #5375e2;
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    padding: 10.5px 49px;
-    color: #ffffff;
-    margin-top: 56px;
-    background: #5375e2;
-`
-
-const StyledMainContainer = styled.div`
-    padding: 35px 122px 89px;
-`
 const StyledArrow = styled.img`
     height: 24px;
     width: 24px;
     margin-top: 4px;
 `
-const StyledTitle = styled.div`
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
-    color: #000000;
-    margin-left: 19px;
-`
-const StyledWrapper = styled(Wrapper)`
-    padding: 37px 55px 50px 55px;
-    background: #fbfbfb;
-`
-const StyledInputText1 = styled(TextComponent)`
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000;
-    margin-bottom: 12px;
-    margin-right: 30%;
-`
-const StyledInputText2 = styled(TextComponent)`
-    margin-top: 21px;
-    margin-right: 37px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-`
-const StyledInput2 = styled(InputComponent)`
-    background: #ffffff;
-    border: 1px solid #e8e8e8;
-    border-radius: 5px;
-    padding: 17px 0px 17px 16px;
-    margin-right: 30px;
-    ${'' /* max-width: 4.53%; */}
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000;
-    width: 5%;
-`
-const StyledInputText2_1 = styled(TextComponent)`
-    margin-top: 21px;
-    margin-right: 37px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-`
-const StyledInputText2_2 = styled(TextComponent)`
-    margin-top: 21px;
-    margin-right: 56px;
-    color: #767676;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-`
-const StyledCheckBox = styled(InputComponent)`
-    margin-top: 10px;
-    margin-right: 13px;
-    color: #767676;
-`
-const StyledSubjectLabel = styled(TextComponent)`
-    background: #f2f2f2;
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    color: #aba9ae;
-    padding: 20px 0px 20px 12.8px;
-    margin-top: 34px;
-`
+// const StyledTitle = styled.div`
+//     font-weight: 600;
+//     font-size: 24px;
+//     line-height: 33px;
+//     color: #000000;
+//     margin-left: 19px;
+// `
+// const StyledWrapper = styled(Wrapper)`
+//     padding: 37px 55px 50px 55px;
+//     background: #fbfbfb;
+// `
+// const StyledInputText1 = styled(TextComponent)`
+//     font-weight: 700;
+//     font-size: 16px;
+//     line-height: 22px;
+//     color: #000000;
+//     margin-bottom: 12px;
+//     margin-right: 30%;
+// `
+// const StyledInputText2 = styled(TextComponent)`
+//     margin-top: 21px;
+//     margin-right: 37px;
+//     font-weight: 600;
+//     font-size: 16px;
+//     line-height: 22px;
+// `
+// const StyledInput2 = styled(InputComponent)`
+//     background: #ffffff;
+//     border: 1px solid #e8e8e8;
+//     border-radius: 5px;
+//     padding: 17px 0px 17px 16px;
+//     margin-right: 30px;
+//     ${'' /* max-width: 4.53%; */}
+//     font-weight: 600;
+//     font-size: 16px;
+//     line-height: 22px;
+//     color: #000000;
+//     width: 5%;
+// `
+// const StyledInputText2_1 = styled(TextComponent)`
+//     margin-top: 21px;
+//     margin-right: 37px;
+//     font-weight: 600;
+//     font-size: 16px;
+//     line-height: 22px;
+// `
+// const StyledInputText2_2 = styled(TextComponent)`
+//     margin-top: 21px;
+//     margin-right: 56px;
+//     color: #767676;
+//     font-weight: 700;
+//     font-size: 16px;
+//     line-height: 22px;
+// `
+// const StyledCheckBox = styled(InputComponent)`
+//     margin-top: 10px;
+//     margin-right: 13px;
+//     color: #767676;
+// `
+// const StyledSubjectLabel = styled(TextComponent)`
+//     background: #f2f2f2;
+//     border-radius: 5px;
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 22px;
+//     color: #aba9ae;
+//     padding: 20px 0px 20px 12.8px;
+//     margin-top: 34px;
+// `
 
-const FNANButton = styled(Button)`
-    border: 1px solid #5375e2;
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    padding: 21px 22px;
-    color: #5375e2;
-    margin-top: 30px;
-`
-const StyledInputText3 = styled(StyledInputText1)`
-    margin-bottom: 30px;
-`
+// const FNANButton = styled(Button)`
+//     border: 1px solid #5375e2;
+//     border-radius: 5px;
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 22px;
+//     padding: 21px 22px;
+//     color: #5375e2;
+//     margin-top: 30px;
+// `
