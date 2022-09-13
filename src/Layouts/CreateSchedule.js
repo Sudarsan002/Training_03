@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+
 import CustomDropDown from '../Components/CustomDropDown'
-import Wrapper from '../Components/Wrapper'
+
 import { useState } from 'react'
 import InputComponent from '../Components/InputComponent'
 import TextComponent from '../Components/TextComponent'
@@ -104,7 +104,6 @@ const CreateSchedule = () => {
     DataForm.semester = sem
     DataForm.complete = true
     DataForm.heading = selectedBranch.branch + ' ' + selectedDep + ' SEM ' + sem
-
     console.log(DataForm)
 
     return (
@@ -401,40 +400,6 @@ const CreateSchedule = () => {
                         dataForm={DataForm}
                         onClick={(e) => onClick(e.target.value)}
                     />
-                    {/* <div
-                        onClick={(e) => onClick(e)}
-                        style={{
-                            width: 174,
-                            height: '40px',
-                            background: 'blue',
-                            borderRadius: 6,
-                            right: '',
-                            top: 10,
-                            border: '0.2px solid black',
-                            marginBottom: '30px',
-                            marginTop: '30px',
-                            color:'white'
-                        }}
-                    >
-                        Save
-                    </div>
-
-                    <div
-                    
-                        style={{
-                            width: 908,
-                            height: '293px',
-                            background: 'red',
-                            borderRadius: 6,
-                            marginRight: '10%',
-                            top: 50,
-                            marginTop: '30%',
-                            position: 'absolute',
-                            
-                        }}
-                    >
-                        s--s-s-s-ss-s-s-s-s-
-                    </div> */}
                 </div>
             </div>
         </>
@@ -442,89 +407,3 @@ const CreateSchedule = () => {
 }
 
 export default CreateSchedule
-
-const StyledArrow = styled.img`
-    height: 24px;
-    width: 24px;
-    margin-top: 4px;
-`
-// const StyledTitle = styled.div`
-//     font-weight: 600;
-//     font-size: 24px;
-//     line-height: 33px;
-//     color: #000000;
-//     margin-left: 19px;
-// `
-// const StyledWrapper = styled(Wrapper)`
-//     padding: 37px 55px 50px 55px;
-//     background: #fbfbfb;
-// `
-// const StyledInputText1 = styled(TextComponent)`
-//     font-weight: 700;
-//     font-size: 16px;
-//     line-height: 22px;
-//     color: #000000;
-//     margin-bottom: 12px;
-//     margin-right: 30%;
-// `
-// const StyledInputText2 = styled(TextComponent)`
-//     margin-top: 21px;
-//     margin-right: 37px;
-//     font-weight: 600;
-//     font-size: 16px;
-//     line-height: 22px;
-// `
-// const StyledInput2 = styled(InputComponent)`
-//     background: #ffffff;
-//     border: 1px solid #e8e8e8;
-//     border-radius: 5px;
-//     padding: 17px 0px 17px 16px;
-//     margin-right: 30px;
-//     ${'' /* max-width: 4.53%; */}
-//     font-weight: 600;
-//     font-size: 16px;
-//     line-height: 22px;
-//     color: #000000;
-//     width: 5%;
-// `
-// const StyledInputText2_1 = styled(TextComponent)`
-//     margin-top: 21px;
-//     margin-right: 37px;
-//     font-weight: 600;
-//     font-size: 16px;
-//     line-height: 22px;
-// `
-// const StyledInputText2_2 = styled(TextComponent)`
-//     margin-top: 21px;
-//     margin-right: 56px;
-//     color: #767676;
-//     font-weight: 700;
-//     font-size: 16px;
-//     line-height: 22px;
-// `
-// const StyledCheckBox = styled(InputComponent)`
-//     margin-top: 10px;
-//     margin-right: 13px;
-//     color: #767676;
-// `
-// const StyledSubjectLabel = styled(TextComponent)`
-//     background: #f2f2f2;
-//     border-radius: 5px;
-//     font-weight: 400;
-//     font-size: 16px;
-//     line-height: 22px;
-//     color: #aba9ae;
-//     padding: 20px 0px 20px 12.8px;
-//     margin-top: 34px;
-// `
-
-// const FNANButton = styled(Button)`
-//     border: 1px solid #5375e2;
-//     border-radius: 5px;
-//     font-weight: 400;
-//     font-size: 16px;
-//     line-height: 22px;
-//     padding: 21px 22px;
-//     color: #5375e2;
-//     margin-top: 30px;
-// `

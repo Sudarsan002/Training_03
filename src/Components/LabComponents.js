@@ -6,19 +6,17 @@ import TextComponent from './TextComponent'
 export const SubjectLabComponent = (props) => {
     const { details, setDetails, label, noon } = props
     console.log('noon', noon)
-    const handleChangeDate = (event, index) => {
-        let clonedArray = [...details]
-        clonedArray[index].date = event?.target?.value
-        setDetails(clonedArray)
-    }
+    // const handleChangeDate = (event, index) => {
+    //     let clonedArray = [...details]
+    //     clonedArray[index].date = event?.target?.value
+    //     setDetails(clonedArray)
+    // }
 
 
     return (
         <>
             {details.map((item, index) => {
-                {
-                    console.log('item', item.isNoon)
-                }
+               
                 return (
                     <div
                         style={{
