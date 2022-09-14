@@ -33,6 +33,7 @@ const Footer = () => {
     )
 }
 
+
 export default Footer
 
 const FooterText = styled.p`

@@ -80,20 +80,17 @@ const CreateSchedule = () => {
     ])
     //  const[active,setActive]=useState(false)
     const [time, setTime] = useState({ hr: '', min: '' })
-    const [noon, setNoon] = useState(false)
-    const [noonFN, setNoonFN] = useState(false)
+    // const [noon, setNoon] = useState(false)
+    // const [noonFN, setNoonFN] = useState(false)
     // const changeTimeHandler = (e) => {
     //     setTime({ hr: e.target.value, min: e.target.value })
     // }
-
     // const changeCheckHandler = (e) => {
     //     setNoon(e.target.checked)
     // }
-
     // const changeCheckFNHandler = (e) => {
     //     setNoonFN(e.target.checked)
     // }
-
     // const[done , setDone]=useState(false)
 
     DataForm.branch = selectedBranch.branch

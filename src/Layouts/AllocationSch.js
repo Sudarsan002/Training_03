@@ -13,7 +13,9 @@ export const AllocationSch = () => {
                 style={{
                     padding: '25px 123px 160px',
                     border: '1px solid black',
-                    margin: '20px 123px 160px 120px',
+                    margin: '20px 123px 160px ',
+                    height: '837px',
+
                     // display:"flex",
                     // flexDirection:"row"
                 }}
@@ -47,87 +49,38 @@ export const AllocationSch = () => {
                     }}
                 >
                     <button
-                        style={{
-                            width: '160px',
-                            height: '32px',
-                            color: '#5375E2',
-                            background: 'white',
-                            border: '1px solid #5375E2',
-                            borderRadius: '5px 0px 0px 5px',
-                        }}
+                        style={styles.firstbutton}
                     >
                         Room 1
                     </button>
                     <button
-                        style={{
-                            width: '160px',
-                            height: '32px',
-                            color: '#5375E2',
-                            background: 'white',
-                            border: '1px solid #5375E2',
-                            borderRadius: '0px',
-                        }}
+                        style={styles.middlebutton}
                     >
                         Room 2
                     </button>
                     <button
-                        style={{
-                            width: '160px',
-                            height: '32px',
-                            color: '#5375E2',
-                            background: 'white',
-                            border: '1px solid #5375E2',
-                            borderRadius: '0px',
-                        }}
+                        style={styles.middlebutton}
                     >
                         Room 3
                     </button>
                     <button
-                        style={{
-                            width: '160px',
-                            height: '32px',
-                            color: '#5375E2',
-                            background: 'white',
-                            border: '1px solid #5375E2',
-                            borderRadius: '0px',
-                        }}
+                        style={styles.middlebutton}
                     >
                         Room 4
                     </button>
                     <button
-                        style={{
-                            width: '160px',
-                            height: '32px',
-                            color: '#5375E2',
-                            background: 'white',
-                            border: '1px solid #5375E2',
-                            borderRadius: '0px',
-                        }}
+                        style={styles.middlebutton}
                     >
                         Room 5
                     </button>
                     <button
-                        style={{
-                            width: '160px',
-                            height: '32px',
-                            color: '#5375E2',
-                            background: 'white',
-                            border: '1px solid #5375E2',
-                            borderRadius: '0px 5px 5px 0px ',
-                        }}
+                        style={styles.middlebutton}
                     >
                         Room 6
                     </button>
                 </div>
                 <div
-                    style={{
-                        margin: '24.82px 185px 18.94px 55px',
-                        border: '1px solid #E8E8EA',
-                        width: '843px',
-                        height: '40px',
-                        borderRadius: '5px',
-                        // textAlign:"center"
-                    }}
+                    style={styles.lastbutton}
                 >
                     <div
                         style={{
@@ -165,26 +118,20 @@ export const AllocationSch = () => {
                         }}
                     >
                         <thead>
-                    <tr
-                        style={{
-                            color: '#5375E2',
-                        }}
-                    >
-                        <td>SNo</td>
-                        <td>Reg No.</td>
-                        <td>Name</td>
-                        <td>Department</td>
-                        <td>Seat No</td>
-                    </tr>
-                </thead>
+                            <tr
+                                style={{
+                                    color: '#5375E2',
+                                }}
+                            >
+                                <td>SNo</td>
+                                <td>Reg No.</td>
+                                <td>Name</td>
+                                <td>Department</td>
+                                <td>Seat No</td>
+                            </tr>
+                        </thead>
 
-                       
-
-                        {AllocationForm.map((AllocationDetails) => {
-                            
-                                console.log(AllocationDetails)
-                            
-                            ;
+                        {AllocationForm.map((AllocationDetails) => (
                             <tr>
                                 {AllocationDetails.SNo}
                                 <td>{AllocationDetails.RegNo}</td>
@@ -192,20 +139,36 @@ export const AllocationSch = () => {
                                 <td>{AllocationDetails.Department}</td>
                                 <td>{AllocationDetails.SeatNo}</td>
                             </tr>
-                        })}
-
-                        {/* {Scheduleform.map((SemesterSch) => (
-                    <tr>
-                        <td>{SemesterSch.SNo}</td>
-                        <td>{SemesterSch.Date}</td>
-                        <td>{SemesterSch.Session}</td>
-                        <td>{SemesterSch.CourseCode}</td>
-                        <td>{SemesterSch.SubjectName}</td>
-                    </tr>
-                ))} */}
+                        ))}
                     </table>
                 </div>
             </div>
         </div>
     )
+}
+
+const styles = {
+    firstbutton: {
+        width: '160px',
+        height: '32px',
+        color: '#5375E2',
+        background: 'white',
+        border: '1px solid #5375E2',
+        borderRadius: '5px 0px 0px 5px',
+    },
+    middlebutton:{
+        width: '160px',
+        height: '32px',
+        color: '#5375E2',
+        background: 'white',
+        border: '1px solid #5375E2',
+        borderRadius: '0px',
+    },
+    lastbutton:{
+        margin: '24.82px 185px 18.94px 55px',
+        border: '1px solid #E8E8EA',
+        width: '843px',
+        height: '40px',
+        borderRadius: '5px',
+    }
 }

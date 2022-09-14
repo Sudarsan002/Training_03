@@ -38,8 +38,3 @@ const NoSchedule = () => {
 
 export default NoSchedule
 
-const NoScheduleImage = styled.img`
-    height: 444px;
-    width: 434px;
-    object-fit: contain;
-`
