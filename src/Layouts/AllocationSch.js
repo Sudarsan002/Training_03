@@ -1,10 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { AllocationForm } from '../Common/data/AllocatonForm'
 import Table from 'react-bootstrap/Table'
 
 import { SchduleButton, Title } from './Schedule'
 
 export const AllocationSch = () => {
+    const[press,setPress]=useState(false)
+    
+    const handleClick=()=>{
+           setPress(true)
+           console.log(setPress)
+    }
     return (
         <div>
             <Title />
@@ -48,40 +54,14 @@ export const AllocationSch = () => {
                         marginTop: '20px',
                     }}
                 >
-                    <button
-                        style={styles.firstbutton}
-                    >
-                        Room 1
-                    </button>
-                    <button
-                        style={styles.middlebutton}
-                    >
-                        Room 2
-                    </button>
-                    <button
-                        style={styles.middlebutton}
-                    >
-                        Room 3
-                    </button>
-                    <button
-                        style={styles.middlebutton}
-                    >
-                        Room 4
-                    </button>
-                    <button
-                        style={styles.middlebutton}
-                    >
-                        Room 5
-                    </button>
-                    <button
-                        style={styles.middlebutton}
-                    >
-                        Room 6
-                    </button>
+                    <button style={styles.firstbutton} onClick={handleClick} >Room 1</button>
+                    <button style={styles.middlebutton}>Room 2</button>
+                    <button style={styles.middlebutton}>Room 3</button>
+                    <button style={styles.middlebutton}>Room 4</button>
+                    <button style={styles.middlebutton}>Room 5</button>
+                    <button style={styles.middlebutton}>Room 6</button>
                 </div>
-                <div
-                    style={styles.lastbutton}
-                >
+                <div style={styles.lastbutton}>
                     <div
                         style={{
                             display: 'flex',
@@ -115,6 +95,7 @@ export const AllocationSch = () => {
                             width: '100%',
                             textAlign: 'center',
                             border: '1px solid black',
+                            height: '550px',
                         }}
                     >
                         <thead>
@@ -156,7 +137,7 @@ const styles = {
         border: '1px solid #5375E2',
         borderRadius: '5px 0px 0px 5px',
     },
-    middlebutton:{
+    middlebutton: {
         width: '160px',
         height: '32px',
         color: '#5375E2',
@@ -164,11 +145,11 @@ const styles = {
         border: '1px solid #5375E2',
         borderRadius: '0px',
     },
-    lastbutton:{
+    lastbutton: {
         margin: '24.82px 185px 18.94px 55px',
         border: '1px solid #E8E8EA',
         width: '843px',
         height: '40px',
         borderRadius: '5px',
-    }
+    },
 }
